@@ -2,7 +2,7 @@ from src.main import setting_goals, welcome_message
 
 
 def test_welcome_message():
-    assert welcome_message("Ammy") == "Ammy, welcome to the Data Engineering course."
+    assert welcome_message("John") == "John, welcome to the Data Engineering course. Hope you have fun!"
 
 
 def test_setting_goals():

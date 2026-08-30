@@ -1,5 +1,5 @@
 def welcome_message(name):
-    return f"{name}, welcome to the Data Engineering course."
+    return f"{name}, welcome to the Data Engineering course. Hope you have fun!"
 
 if __name__ == "__main__":
     name = input("Enter your name: ")
