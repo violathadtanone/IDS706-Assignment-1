@@ -241,34 +241,34 @@ We will create GitHub Actions workflow. Here, we are telling GitHub what to do o
 name: Python tests
 
 on:
-    push:
-    pull_request:
-    workflow_dispatch:
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Check out repository
-              uses: actions/checkout@v4
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-            - name: Set up Python
-              uses: actions/setup-python@v5
-              with:
-                  python-version: "3.12"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-            - name: Install dependencies
-              run: make install
+      - name: Install dependencies
+        run: make install
 
-            - name: Run tests
-              run: make test
+      - name: Run tests
+        run: make test
 
-            - name: Build Docker image
-              run: make docker-build
+      - name: Build Docker image
+        run: make docker-build
 
-            - name: Run tests in Docker
-              run: make docker-test
+      - name: Run tests in Docker
+        run: make docker-test
 ```
 <br><br>
 
@@ -276,12 +276,12 @@ jobs:
 This is a common command, when we are collaborating on codes on GitHub repository.
 
 - Normally, when we are working with other people. We will pull the current repository first since there may be changes from our previous pull.
-If there is no change, the output will mention `Already up to date.`
+If there is no change, the output will mention `Already up to date.`.
 ```bash
 git pull
 ```
 
-- We can also check the status of current reposiory using the code below.
+- We can also check the status of current reposiory using the code below:
 ```bash
 git status
 ```
@@ -291,7 +291,7 @@ git status
 git add .
 ```
 
-- Commit: This will say all staged changes as a local commit. We also name the commit as `"Add project files"`
+- Commit: This will say all staged changes as a local commit. We also name the commit as `"Add project files"`.
 ```bash
 git commit -m "Add project files"
 ```
@@ -301,7 +301,7 @@ git commit -m "Add project files"
 git push
 ```
 
-- We can check the successful push to GitHub by going to our repository and `Actions` tab. Here, we will see the commit `"Add project files"` that we have previously pushed. The workflow runs will have green icon indicating a complete run, where red icon indicates some failure during the run. Then we can proceed to see workflow run details and confirm that is passes all six steps including
+- We can check the successful push to GitHub by going to our repository and `Actions` tab. Here, we will see the commit `"Add project files"` that we have previously pushed. The workflow runs will have green icon indicating a complete run, where red icon indicates some failure during the run. Then we can proceed to see workflow run details and confirm that is passes all six steps including:
     - Check out repository
     - Set up Python
     - Install dependencies
