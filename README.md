@@ -45,7 +45,7 @@ Configuration:
 This step will create a separate virtual environment, where all the packages installations for the project will be in this environment to avoid conflict with other projects.
 - Create and activate the virtual environment on Terminal with the code below:
 ```bash
-python3 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -56,7 +56,7 @@ python -m pip install --upgrade pip
 <br><br>
 
 ### 4. Create requirement file for project dependencies (e.g. python packages required)
-- Create a new file called `requirements.text` and add packages below in the file.
+- Create a new file called `requirements.text` in the project root and add packages below in the file.
 ```
 pytest
 black
